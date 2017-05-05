@@ -70,6 +70,12 @@
             this.clubeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtImagemId = new System.Windows.Forms.TextBox();
             this.posicaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.posicao_IdComboBox = new System.Windows.Forms.ComboBox();
             apelidoLabel = new System.Windows.Forms.Label();
             dataTransferenciaLabel = new System.Windows.Forms.Label();
@@ -238,6 +244,7 @@
             // 
             this.dataTransferenciaDateTimePicker.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataTransferenciaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.jogadorBindingSource, "DataTransferencia", true));
+            this.dataTransferenciaDateTimePicker.Enabled = false;
             this.dataTransferenciaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dataTransferenciaDateTimePicker.Location = new System.Drawing.Point(158, 110);
             this.dataTransferenciaDateTimePicker.Name = "dataTransferenciaDateTimePicker";
@@ -267,7 +274,7 @@
             this.overallTextBox.Enabled = false;
             this.overallTextBox.Location = new System.Drawing.Point(158, 315);
             this.overallTextBox.Name = "overallTextBox";
-            this.overallTextBox.Size = new System.Drawing.Size(200, 20);
+            this.overallTextBox.Size = new System.Drawing.Size(157, 20);
             this.overallTextBox.TabIndex = 10;
             // 
             // skillCabeceioTextBox
@@ -275,7 +282,7 @@
             this.skillCabeceioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jogadorBindingSource, "SkillCabeceio", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
             this.skillCabeceioTextBox.Location = new System.Drawing.Point(158, 185);
             this.skillCabeceioTextBox.Name = "skillCabeceioTextBox";
-            this.skillCabeceioTextBox.Size = new System.Drawing.Size(200, 20);
+            this.skillCabeceioTextBox.Size = new System.Drawing.Size(157, 20);
             this.skillCabeceioTextBox.TabIndex = 5;
             this.skillCabeceioTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.skillCabeceioTextBox_KeyUp);
             // 
@@ -284,7 +291,7 @@
             this.skillChuteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jogadorBindingSource, "SkillChute", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
             this.skillChuteTextBox.Location = new System.Drawing.Point(158, 211);
             this.skillChuteTextBox.Name = "skillChuteTextBox";
-            this.skillChuteTextBox.Size = new System.Drawing.Size(200, 20);
+            this.skillChuteTextBox.Size = new System.Drawing.Size(157, 20);
             this.skillChuteTextBox.TabIndex = 6;
             this.skillChuteTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.skillCabeceioTextBox_KeyUp);
             // 
@@ -293,7 +300,7 @@
             this.skillDefesaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jogadorBindingSource, "SkillDefesa", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
             this.skillDefesaTextBox.Location = new System.Drawing.Point(158, 237);
             this.skillDefesaTextBox.Name = "skillDefesaTextBox";
-            this.skillDefesaTextBox.Size = new System.Drawing.Size(200, 20);
+            this.skillDefesaTextBox.Size = new System.Drawing.Size(157, 20);
             this.skillDefesaTextBox.TabIndex = 7;
             this.skillDefesaTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.skillCabeceioTextBox_KeyUp);
             // 
@@ -302,7 +309,7 @@
             this.skillMarcacaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jogadorBindingSource, "SkillMarcacao", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
             this.skillMarcacaoTextBox.Location = new System.Drawing.Point(158, 263);
             this.skillMarcacaoTextBox.Name = "skillMarcacaoTextBox";
-            this.skillMarcacaoTextBox.Size = new System.Drawing.Size(200, 20);
+            this.skillMarcacaoTextBox.Size = new System.Drawing.Size(157, 20);
             this.skillMarcacaoTextBox.TabIndex = 8;
             this.skillMarcacaoTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.skillCabeceioTextBox_KeyUp);
             // 
@@ -311,7 +318,7 @@
             this.skillPasseTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jogadorBindingSource, "SkillPasse", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
             this.skillPasseTextBox.Location = new System.Drawing.Point(158, 289);
             this.skillPasseTextBox.Name = "skillPasseTextBox";
-            this.skillPasseTextBox.Size = new System.Drawing.Size(200, 20);
+            this.skillPasseTextBox.Size = new System.Drawing.Size(157, 20);
             this.skillPasseTextBox.TabIndex = 9;
             this.skillPasseTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.skillCabeceioTextBox_KeyUp);
             // 
@@ -348,9 +355,8 @@
             // grafico
             // 
             this.grafico.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisX.Maximum = 99D;
-            chartArea1.AxisX.Minimum = 0D;
             chartArea1.AxisY.LabelStyle.Enabled = false;
+            chartArea1.AxisY.Maximum = 99D;
             chartArea1.Name = "ChartArea1";
             this.grafico.ChartAreas.Add(chartArea1);
             this.grafico.Location = new System.Drawing.Point(445, 161);
@@ -418,20 +424,22 @@
             this.salarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jogadorBindingSource, "Salario", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             this.salarioTextBox.Location = new System.Drawing.Point(158, 161);
             this.salarioTextBox.Name = "salarioTextBox";
-            this.salarioTextBox.Size = new System.Drawing.Size(200, 20);
+            this.salarioTextBox.Size = new System.Drawing.Size(157, 20);
             this.salarioTextBox.TabIndex = 4;
             // 
             // cbxClube
             // 
-            this.cbxClube.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.jogadorBindingSource, "ClubeAtual_Id", true));
-            this.cbxClube.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.jogadorBindingSource, "ClubeAtual", true));
+            this.cbxClube.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.jogadorBindingSource, "ClubeAtual_Id", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.cbxClube.DataSource = this.clubeBindingSource;
+            this.cbxClube.DisplayMember = "Nome";
             this.cbxClube.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxClube.Enabled = false;
             this.cbxClube.FormattingEnabled = true;
             this.cbxClube.Location = new System.Drawing.Point(158, 83);
             this.cbxClube.Name = "cbxClube";
             this.cbxClube.Size = new System.Drawing.Size(200, 21);
             this.cbxClube.TabIndex = 2;
+            this.cbxClube.ValueMember = "Id";
             // 
             // clubeBindingSource
             // 
@@ -450,17 +458,79 @@
             // 
             this.posicaoBindingSource.DataSource = typeof(SoccerManager.Posicao);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(321, 190);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "0 à 99";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(321, 164);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "> R$ 0,00";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(321, 267);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "0 à 99";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(321, 242);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "0 à 99";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label5.Location = new System.Drawing.Point(321, 214);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 13);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "0 à 99";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label6.Location = new System.Drawing.Point(321, 294);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.TabIndex = 42;
+            this.label6.Text = "0 à 99";
+            // 
             // posicao_IdComboBox
             // 
-            this.posicao_IdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.jogadorBindingSource, "Posicao_Id", true));
-            this.posicao_IdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.jogadorBindingSource, "Posicao", true));
+            this.posicao_IdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.jogadorBindingSource, "Posicao_Id", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.posicao_IdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.jogadorBindingSource, "Posicao_Id", true));
             this.posicao_IdComboBox.DataSource = this.posicaoBindingSource;
+            this.posicao_IdComboBox.DisplayMember = "Descricao";
             this.posicao_IdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.posicao_IdComboBox.FormattingEnabled = true;
             this.posicao_IdComboBox.Location = new System.Drawing.Point(158, 136);
             this.posicao_IdComboBox.Name = "posicao_IdComboBox";
             this.posicao_IdComboBox.Size = new System.Drawing.Size(200, 21);
-            this.posicao_IdComboBox.TabIndex = 3;
+            this.posicao_IdComboBox.TabIndex = 4;
+            this.posicao_IdComboBox.ValueMember = "Id";
             // 
             // CadastroJogadoresForm
             // 
@@ -468,6 +538,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 379);
             this.Controls.Add(this.posicao_IdComboBox);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(descricaoLabel);
             this.Controls.Add(this.txtImagemId);
             this.Controls.Add(this.salarioTextBox);
@@ -543,6 +619,12 @@
         private System.Windows.Forms.TextBox txtImagemId;
         private System.Windows.Forms.BindingSource clubeBindingSource;
         private System.Windows.Forms.BindingSource posicaoBindingSource;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox posicao_IdComboBox;
     }
 }

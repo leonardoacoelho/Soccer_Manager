@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.adicionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,14 +56,14 @@
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(98, 401);
+            this.menuStrip1.Size = new System.Drawing.Size(76, 401);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // adicionarToolStripMenuItem
             // 
             this.adicionarToolStripMenuItem.Name = "adicionarToolStripMenuItem";
-            this.adicionarToolStripMenuItem.Size = new System.Drawing.Size(85, 19);
+            this.adicionarToolStripMenuItem.Size = new System.Drawing.Size(63, 19);
             this.adicionarToolStripMenuItem.Text = "Adicionar";
             this.adicionarToolStripMenuItem.Click += new System.EventHandler(this.adicionarToolStripMenuItem_Click);
             // 
@@ -70,7 +71,7 @@
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(85, 19);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(63, 19);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Visible = false;
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
@@ -92,11 +93,12 @@
             this.Overall});
             this.dgvJogadores.DataSource = this.bsJogadores;
             this.dgvJogadores.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvJogadores.Location = new System.Drawing.Point(98, 0);
+            this.dgvJogadores.Location = new System.Drawing.Point(76, 0);
             this.dgvJogadores.Name = "dgvJogadores";
             this.dgvJogadores.ReadOnly = true;
-            this.dgvJogadores.Size = new System.Drawing.Size(702, 401);
+            this.dgvJogadores.Size = new System.Drawing.Size(724, 401);
             this.dgvJogadores.TabIndex = 1;
+            this.dgvJogadores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJogadores_CellDoubleClick);
             // 
             // Id
             // 
@@ -128,7 +130,10 @@
             // 
             // DataTranferencia
             // 
-            this.DataTranferencia.DataPropertyName = "DataTranferencia";
+            this.DataTranferencia.DataPropertyName = "DataTransferencia";
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.DataTranferencia.DefaultCellStyle = dataGridViewCellStyle1;
             this.DataTranferencia.HeaderText = "Data Trans.";
             this.DataTranferencia.Name = "DataTranferencia";
             this.DataTranferencia.ReadOnly = true;
@@ -175,6 +180,7 @@
         private System.Windows.Forms.ToolStripMenuItem adicionarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvJogadores;
+        private System.Windows.Forms.BindingSource bsJogadores;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apelido;
@@ -182,6 +188,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DataTranferencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Salario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Overall;
-        private System.Windows.Forms.BindingSource bsJogadores;
     }
 }

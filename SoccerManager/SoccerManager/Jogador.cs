@@ -17,7 +17,7 @@ namespace SoccerManager
 
         public int Posicao_Id { get; set; }
 
-        public Clube ClubeAtual { get; private set; }
+        public Clube ClubeAtual { get; set; }
 
         public int? ClubeAtual_Id { get; set; }
 
@@ -37,8 +37,13 @@ namespace SoccerManager
 
         public int Overall { get; set; }
 
-        public Imagem Foto { get; private set; }
+        public Imagem Foto { get; set; }
 
         public int? Foto_Id { get; set; }
+
+        public override string ToString()
+        {
+            return Nome;
+        }
     }
 }

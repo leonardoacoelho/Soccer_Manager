@@ -44,5 +44,26 @@ namespace SoccerManager.UI
             var form = new CadastroJogadoresForm(this);
             form.Show();
         }
+
+        private void dgvJogadores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                using (var bo = new JogadorBO())
+                {
+                    var id = dgvJogadores.Rows[e.RowIndex].Cells["Id"].Value.ToString().ToInt();
+
+                    var jogador = bo.Get(id);
+
+                    var form = new CadastroJogadoresForm(this, jogador);
+                    form.Show();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

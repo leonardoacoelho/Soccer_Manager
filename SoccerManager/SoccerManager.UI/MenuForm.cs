@@ -49,7 +49,7 @@ namespace SoccerManager.UI
 
         private void transferenciaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new ListaTransferenciaForm();
+            var form = new ListaTransferenciaForm(this);
             form.Show();
         }
     }

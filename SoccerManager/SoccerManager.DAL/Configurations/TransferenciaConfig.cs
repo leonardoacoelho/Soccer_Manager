@@ -17,7 +17,7 @@ namespace SoccerManager.DAL.Configurations
                 .WithMany()
                 .HasForeignKey(x => x.Jogador_Id);
 
-            HasRequired(t => t.Clube)
+            HasOptional(t => t.Clube)
                 .WithMany()
                 .HasForeignKey(x => x.Clube_Id);
         }

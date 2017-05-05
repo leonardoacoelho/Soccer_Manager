@@ -13,7 +13,7 @@ namespace SoccerManager
 
         public string Sigla { get; set; }
 
-        public FormacaoTatica FormacaoTatica { get; private set; }
+        public FormacaoTatica FormacaoTatica { get; set; }
 
         public int FormacaoTatica_Id { get; set; }
 
@@ -25,6 +25,9 @@ namespace SoccerManager
 
         public override string ToString()
         {
+            if (Nome == null)
+                return "";
+
             return $"{Nome} - {Sigla}";
         }
     }

@@ -36,6 +36,10 @@ namespace SoccerManager.UI
             using (var clubeBo = new ClubeBO())
             {
                 var clubes = clubeBo.List();
+
+                var clubeNull = new Clube();
+                clubes.Insert(0, clubeNull);
+
                 clubeBindingSource.DataSource = clubes;
             }
 
@@ -102,6 +106,8 @@ namespace SoccerManager.UI
                     bytes = ImagemBO.ImageToBytes(pcbFoto.Image)
                 };
 
+                _jogador.ClubeAtual_Id = _jogador.ClubeAtual_Id == 0 ? null : _jogador.ClubeAtual_Id;
+
                 using (var bo = new JogadorBO())
                 {
                     bo.Save(_jogador, imagem);
@@ -111,7 +117,6 @@ namespace SoccerManager.UI
 
                 _lista.AtualizarGrid();
                 pcbFoto.Image = null;
-
                 Hide();
             }
             catch (Exception ex)

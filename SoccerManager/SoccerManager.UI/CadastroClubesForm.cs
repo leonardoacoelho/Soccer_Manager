@@ -112,7 +112,7 @@ namespace SoccerManager.UI
         {
             using (var bo = new JogadorBO())
             {
-                bsJogadores.DataSource = bo.List();
+                bsJogadores.DataSource = bo.List(x => x.ClubeAtual_Id == _clube.Id);
             }
         }
 
