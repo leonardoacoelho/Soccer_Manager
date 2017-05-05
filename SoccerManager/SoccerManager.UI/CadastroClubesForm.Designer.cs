@@ -323,6 +323,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "CadastroClubesForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Clubes";
             this.Load += new System.EventHandler(this.CadastroClubesForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

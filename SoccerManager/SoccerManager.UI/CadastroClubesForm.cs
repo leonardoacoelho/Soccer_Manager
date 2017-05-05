@@ -100,12 +100,12 @@ namespace SoccerManager.UI
                     pcbEscudo.Image = ImagemBO.ByteToImage(_clube.Escudo?.bytes);
 
                     menuRemover.Visible = true;
+
+                    AtualizarGrid();
                 }
                 else
                     menuRemover.Visible = false;
             }
-
-            AtualizarGrid();
         }
 
         private void AtualizarGrid()
