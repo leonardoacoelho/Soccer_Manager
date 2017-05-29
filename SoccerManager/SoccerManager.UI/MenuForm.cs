@@ -1,4 +1,5 @@
 ﻿using SoccerManager.UI.Base;
+using SoccerManager.UI.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,6 +51,30 @@ namespace SoccerManager.UI
         private void transferenciaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = new ListaTransferenciaForm(this);
+            form.Show();
+        }
+
+        private void jogadoresPorClubeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var form = new JogadoresPorClubeReportForm();
+            form.Show();
+        }
+
+        private void jogadoresPorPosiçãoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var form = new JogadoresPorPosicaoReportForm();
+            form.Show();
+        }
+
+        private void folhaSalarialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new FolhaSalarialReportForm();
+            form.Show();
+        }
+
+        private void listaDeTitularesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new TitularesReportForm();
             form.Show();
         }
     }

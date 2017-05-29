@@ -1,0 +1,42 @@
+﻿@model IEnumerable<SoccerManager.Web.Models.PosicaoVM>
+
+@{
+    ViewBag.Title = "Posições";
+}
+
+<h2>Posições</h2>
+
+<hr />
+
+<p>
+    <a href="@Url.Action("Adicionar")" class="btn btn-success">Adicionar</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Linha)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Linha)
+            </td>
+            <td>
+                <a href="@Url.Action("Editar", new { id = item.Id })" class="btn btn-primary">Editar</a>
+                <a href="@Url.Action("Remover", new { id = item.Id })" class="btn btn-danger">Remover</a>
+                <a href="@Url.Action("Detalhar", new { id = item.Id })" class="btn btn-warning">Detalhar</a>
+            </td>
+        </tr>
+    }
+
+</table>

@@ -12,7 +12,6 @@ namespace SoccerManager.BLL
     {
         public override void Save(Transferencia entity)
         {
-            
             using (var bo = new JogadorBO())
             {
                 var jogador = bo.Get(entity.Jogador_Id);
@@ -22,7 +21,13 @@ namespace SoccerManager.BLL
 
                 jogador.DataTransferencia = entity.Data;
                 jogador.ClubeAtual_Id = entity.Clube_Id;
+
+                using (var clubeBo = new ClubeBO())
+                {
+                    clubeBo.EditarTemJogadores(jogador.ClubeAtual_Id, entity.Clube_Id);
+
                     bo.Save(jogador);
+                }
             }
 
             entity.Clube = null;

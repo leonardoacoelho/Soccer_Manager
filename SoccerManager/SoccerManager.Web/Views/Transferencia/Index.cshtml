@@ -1,0 +1,47 @@
+﻿@model IEnumerable<SoccerManager.Web.Models.TransferenciaVM>
+
+@{
+    ViewBag.Title = "Transferências";
+}
+
+<h2>Transferências</h2>
+
+<hr />
+
+<p>
+    <a href="@Url.Action("Adicionar")" class="btn btn-success">Adicionar</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Jogador_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clube_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Jogador_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Clube.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data)
+        </td>
+        <td>
+            <a href="@Url.Action("Editar", new { id = item.Id })" class="btn btn-primary">Editar</a>
+            <a href="@Url.Action("Remover", new { id = item.Id })" class="btn btn-danger">Remover</a>
+            <a href="@Url.Action("Detalhar", new { id = item.Id })" class="btn btn-warning">Detalhar</a>
+        </td>
+    </tr>
+}
+
+</table>

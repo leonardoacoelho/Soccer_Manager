@@ -21,7 +21,6 @@ namespace SoccerManager.BLL
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -42,6 +41,32 @@ namespace SoccerManager.BLL
             {
 
                 throw;
+            }
+        }
+
+        public void EditarTemJogadores(int? clubeAnteriorId, int? clubeNovoId)
+        {
+            using (var dao = new ClubeDAO())
+            {
+                //Clube Anterior
+                if(clubeAnteriorId != null)
+                {
+                    var clubeAnterior = Get((int)clubeAnteriorId);
+
+                    var jogadorBo = new JogadorBO();
+                    var jogadores = jogadorBo.List(x => x.ClubeAtual_Id == clubeAnteriorId);
+
+                    clubeAnterior.TemJogadores = jogadores.Count > 1;
+                    dao.EditTemJogadores(clubeAnterior);
+                }
+
+                //Clube Novo
+                if (clubeNovoId != null)
+                {
+                    var clubeNovo = Get((int)clubeNovoId);
+                    clubeNovo.TemJogadores = true;
+                    dao.EditTemJogadores(clubeNovo);
+                }
             }
         }
     }

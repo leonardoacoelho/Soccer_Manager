@@ -1,5 +1,6 @@
 ﻿using SoccerManager.BLL;
 using SoccerManager.UI.Base;
+using SoccerManager.UI.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,6 +65,16 @@ namespace SoccerManager.UI
 
                 throw;
             }
+        }
+
+        private void jogadoresPorClubeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void jogadoresPorPosiçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

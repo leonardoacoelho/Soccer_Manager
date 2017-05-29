@@ -1,0 +1,59 @@
+﻿@model SoccerManager.Web.Models.TransferenciaVM
+
+@{
+    ViewBag.Title = "Transferência";
+}
+
+<h2>Remover</h2>
+
+<ol class="breadcrumb text-info">
+    <li><a href="@Url.Action("Index")">Transferências</a></li>
+    <li>Remover</li>
+</ol>
+
+<hr />
+
+<h3 class="alert alert-warning text-center">Tem certeza que deseja remover este registro?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Jogador_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Jogador.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Clube_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clube.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Remover" class="btn btn-danger" />
+        </div>
+    }
+</div>
+
+<hr />
+
+<div class="alert alert-info text text-right">
+    <a href="@Url.Action("Index")"><i class="glyphicon glyphicon-arrow-left"></i> Voltar para a lista</a>
+</div>
+

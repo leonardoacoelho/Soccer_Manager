@@ -1,0 +1,133 @@
+﻿@model SoccerManager.Web.Models.JogadorVM
+
+@{
+    ViewBag.Title = "Detalhar";
+}
+
+<h2>Jogador</h2>
+
+<ol class="breadcrumb alert alert-info">
+    <li><a href="@Url.Action("Index")">Jogadores</a></li>
+    <li>Detalhar</li>
+</ol>
+
+<hr />
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apelido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apelido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Posicao_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Posicao.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClubeAtual_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClubeAtual.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataTransferencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataTransferencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SkillChute)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SkillChute)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SkillPasse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SkillPasse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SkillCabeceio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SkillCabeceio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SkillMarcacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SkillMarcacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SkillDefesa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SkillDefesa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Overall)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Overall)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Foto_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Foto_Id)
+        </dd>
+
+    </dl>
+</div>
+
+<p>
+    <a href="@Url.Action("Editar", new{ Model.Id })" class="btn btn-primary text-right">Editar</a>
+</p>
+
+<hr />
+
+<div class="alert alert-info text text-right">
+    <a href="@Url.Action("Index")"><i class="glyphicon glyphicon-arrow-left"></i> Voltar para a lista</a>
+</div>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoccerManager", "SoccerManager\SoccerManager.csproj", "{92F63B55-1DDB-4183-AECC-8BD85199151F}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoccerManager.UI", "SoccerManager.UI\SoccerManager.UI.csproj", "{F079FB48-4E0C-405C-AC6A-4CBE50A4AA03}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoccerManager.BLL", "SoccerManager.BLL\SoccerManager.BLL.csproj", "{6CC51719-4BE2-4F0D-9E7E-975E981C37BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoccerManager.Web", "SoccerManager.Web\SoccerManager.Web.csproj", "{FA6F720E-E54D-4736-98B0-3BA659EF7618}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{6CC51719-4BE2-4F0D-9E7E-975E981C37BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CC51719-4BE2-4F0D-9E7E-975E981C37BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CC51719-4BE2-4F0D-9E7E-975E981C37BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA6F720E-E54D-4736-98B0-3BA659EF7618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA6F720E-E54D-4736-98B0-3BA659EF7618}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA6F720E-E54D-4736-98B0-3BA659EF7618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA6F720E-E54D-4736-98B0-3BA659EF7618}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

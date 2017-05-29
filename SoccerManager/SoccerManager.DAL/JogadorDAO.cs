@@ -6,6 +6,7 @@ using System.Linq;
 using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace SoccerManager.DAL
 {
@@ -20,9 +21,7 @@ namespace SoccerManager.DAL
         {
             using (var context = new DataContext())
             {
-                return context.Jogadores
-                    .Include(x => x.ClubeAtual)
-                    .ToList();
+                return context.Jogadores.Include(x => x.ClubeAtual).Include(x => x.Posicao).ToList();
             }
         }
 
@@ -30,7 +29,23 @@ namespace SoccerManager.DAL
         {
             using (var context = new DataContext())
             {
-                return context.Jogadores.Include(x => x.ClubeAtual).FirstOrDefault(x => x.Id == id);
+                return context.Jogadores.Include(x => x.ClubeAtual).Include(x => x.Posicao).FirstOrDefault(x => x.Id == id);
+            }
+        }
+
+        public override Jogador Get(Expression<Func<Jogador, bool>> filter)
+        {
+            using (var context = new DataContext())
+            {
+                return context.Jogadores.Include(x => x.ClubeAtual).Include(x => x.Posicao).FirstOrDefault(filter);
+            }
+        }
+
+        public override List<Jogador> List(Expression<Func<Jogador, bool>> filter)
+        {
+            using (var context = new DataContext())
+            {
+                return context.Jogadores.Include(x => x.ClubeAtual).Include(x => x.Posicao).ToList();
             }
         }
     }

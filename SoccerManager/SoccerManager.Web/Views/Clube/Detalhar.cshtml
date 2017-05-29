@@ -1,0 +1,61 @@
+﻿@model SoccerManager.Web.Models.ClubeVM
+
+@{
+    ViewBag.Title = "Detalhar";
+}
+
+<h2>Clube</h2>
+
+<ol class="breadcrumb text-info">
+    <li><a href="@Url.Action("Index")">Clubes</a></li>
+    <li>Detalhes</li>
+</ol>
+
+<hr />
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sigla)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sigla)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FormacaoTatica_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormacaoTatica.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Escudo_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Escudo_Id)
+        </dd>
+
+    </dl>
+</div>
+
+<p>
+    <a href="@Url.Action("Editar", new{ Model.Id })" class="btn btn-primary text-right">Editar</a>
+</p>
+
+<hr />
+
+<div class="alert alert-info text text-right">
+    <a href="@Url.Action("Index")"><i class="glyphicon glyphicon-arrow-left"></i> Voltar para a lista</a>
+</div>

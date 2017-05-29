@@ -16,6 +16,7 @@ namespace SoccerManager.BLL
             Validar(entity);
 
             entity.ClubeAtual = null;
+            entity.Overall = (entity.SkillCabeceio + entity.SkillChute + entity.SkillDefesa + entity.SkillMarcacao + entity.SkillPasse) / 5;
 
             base.Save(entity);
         }

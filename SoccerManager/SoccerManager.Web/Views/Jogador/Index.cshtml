@@ -1,0 +1,59 @@
+﻿@model IEnumerable<SoccerManager.Web.Models.JogadorVM>
+
+@{
+    ViewBag.Title = "Jogadores";
+}
+
+<h2>Jogadores</h2>
+
+<hr />
+
+<p>
+    <a href="@Url.Action("Adicionar")" class="btn btn-success">Adicionar</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apelido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Posicao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Overall)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apelido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Posicao.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Overall)
+        </td>
+        <td>
+            <a href="@Url.Action("Editar", new { id = item.Id })" class="btn btn-primary">Editar</a>
+            <a href="@Url.Action("Remover", new { id = item.Id })" class="btn btn-danger">Remover</a>
+            <a href="@Url.Action("Detalhar", new { id = item.Id })" class="btn btn-warning">Detalhar</a>
+        </td>
+    </tr>
+}
+
+</table>

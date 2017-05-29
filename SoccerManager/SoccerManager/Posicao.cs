@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace SoccerManager
 {
+    [Serializable]
     public class Posicao : Base
     {
         public string Descricao { get; set; }
@@ -17,6 +18,11 @@ namespace SoccerManager
         public override string ToString()
         {
             return Descricao;
+        }
+
+        public Posicao()
+        {
+
         }
     }
 }

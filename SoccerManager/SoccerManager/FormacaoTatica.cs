@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace SoccerManager
 {
+    [Serializable]
     public class FormacaoTatica : Base
     {
         public int LinhaDefensiva { get; set; }
@@ -22,6 +23,11 @@ namespace SoccerManager
         public override string ToString()
         {
             return $"{LinhaDefensiva}-{LinhaCentral}-{LinhaOfensiva}";
+        }
+
+        public FormacaoTatica()
+        {
+
         }
     }
 }

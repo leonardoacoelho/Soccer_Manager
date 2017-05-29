@@ -1,0 +1,52 @@
+﻿@model SoccerManager.Web.Models.TransferenciaVM
+
+@{
+    ViewBag.Title = "Detalhar";
+}
+
+<h2>Transferência</h2>
+
+<ol class="breadcrumb text-info">
+    <li><a href="@Url.Action("Index")">Transferências</a></li>
+    <li>Detalhar</li>
+</ol>
+
+<hr />
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Jogador_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Jogador.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Clube_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clube.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="@Url.Action("Editar", new{ Model.Id })" class="btn btn-primary text-right">Editar</a>
+</p>
+
+<hr />
+
+<div class="alert alert-info text text-right">
+    <a href="@Url.Action("Index")"><i class="glyphicon glyphicon-arrow-left"></i> Voltar para a lista</a>
+</div>

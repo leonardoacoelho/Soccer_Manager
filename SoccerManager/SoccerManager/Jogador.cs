@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace SoccerManager
 {
+    [Serializable]
     public class Jogador : Base
     {
         public string Nome { get; set; }
@@ -44,6 +45,11 @@ namespace SoccerManager
         public override string ToString()
         {
             return Nome;
+        }
+
+        public Jogador()
+        {
+
         }
     }
 }

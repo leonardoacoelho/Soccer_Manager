@@ -3,6 +3,7 @@ using System;
 
 namespace SoccerManager
 {
+    [Serializable]
     public class Transferencia : Base
     {
         public Jogador Jogador { get; set; }
@@ -14,5 +15,10 @@ namespace SoccerManager
         public int? Clube_Id { get; set; }
 
         public DateTime Data { get; set; }
+
+        public Transferencia()
+        {
+
+        }
     }
 }

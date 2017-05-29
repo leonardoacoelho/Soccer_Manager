@@ -78,6 +78,10 @@
     <Compile Include="Migrations\201705051647227_Alterar_Clube_Id_Nullavel.Designer.cs">
       <DependentUpon>201705051647227_Alterar_Clube_Id_Nullavel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705261633549_Clube_Possui_Jogador.cs" />
+    <Compile Include="Migrations\201705261633549_Clube_Possui_Jogador.Designer.cs">
+      <DependentUpon>201705261633549_Clube_Possui_Jogador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PosicaoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705051647227_Alterar_Clube_Id_Nullavel.resx">
       <DependentUpon>201705051647227_Alterar_Clube_Id_Nullavel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705261633549_Clube_Possui_Jogador.resx">
+      <DependentUpon>201705261633549_Clube_Possui_Jogador.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

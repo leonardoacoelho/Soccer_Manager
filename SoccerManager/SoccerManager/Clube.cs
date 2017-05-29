@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace SoccerManager
 {
+    [Serializable]
     public class Clube : Base
     {
         public string Nome { get; set; }
@@ -19,6 +20,8 @@ namespace SoccerManager
 
         public List<Jogador> Jogadores { get; set; }
 
+        public bool TemJogadores { get; set; }
+
         public Imagem Escudo { get; private set; }
 
         public int? Escudo_Id { get; set; }
@@ -29,6 +32,11 @@ namespace SoccerManager
                 return "";
 
             return $"{Nome} - {Sigla}";
+        }
+
+        public Clube()
+        {
+
         }
     }
 }

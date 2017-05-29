@@ -1,0 +1,59 @@
+﻿@model SoccerManager.Web.Models.FormacaoTaticaVM
+
+@{
+    ViewBag.Title = "Detalhar";
+}
+
+<h2>Formação Tática</h2>
+
+<ol class="breadcrumb text-info">
+    <li><a href="@Url.Action("Index")">Formação Tática</a></li>
+    <li>Detalhar</li>
+</ol>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LinhaDefensiva)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinhaDefensiva)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinhaCentral)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinhaCentral)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinhaOfensiva)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinhaOfensiva)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="@Url.Action("Editar", new{ Model.Id })" class="btn btn-danger text-right">Editar</a>
+</p>
+
+<hr />
+
+<div class="alert alert-info text text-right">
+    <a href="@Url.Action("Index")"><i class="glyphicon glyphicon-arrow-left"></i> Voltar para a lista</a>
+</div>
