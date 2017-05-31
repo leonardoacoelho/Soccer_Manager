@@ -83,6 +83,7 @@
       <DependentUpon>201705261633549_Clube_Possui_Jogador.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PatrocinadorDAO.cs" />
     <Compile Include="PosicaoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TransferenciaDAO.cs" />

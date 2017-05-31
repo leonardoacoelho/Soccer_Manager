@@ -134,12 +134,14 @@
     <Compile Include="Mappers\AutoMapperConfig.cs" />
     <Compile Include="Mappers\Profiles\ClubeProfile.cs" />
     <Compile Include="Mappers\Profiles\FormacaoTaticaProfile.cs" />
+    <Compile Include="Mappers\Profiles\ImagemProfile.cs" />
     <Compile Include="Mappers\Profiles\JogadorProfile.cs" />
     <Compile Include="Mappers\Profiles\PosicaoProfile.cs" />
     <Compile Include="Mappers\Profiles\TransferenciaProfile.cs" />
     <Compile Include="Models\Base\BaseVM.cs" />
     <Compile Include="Models\ClubeVM.cs" />
     <Compile Include="Models\FormacaoTaticaVM.cs" />
+    <Compile Include="Models\ImagemVM.cs" />
     <Compile Include="Models\JogadorVM.cs" />
     <Compile Include="Models\PosicaoVM.cs" />
     <Compile Include="Models\TransferenciaVM.cs" />
@@ -190,6 +192,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Imagem\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SoccerManager.BLL\SoccerManager.BLL.csproj">

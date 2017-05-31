@@ -15,6 +15,7 @@ namespace SoccerManager.Web.Mappers
                     cfg.AddProfile<ClubeProfile>();
                     cfg.AddProfile<JogadorProfile>();
                     cfg.AddProfile<TransferenciaProfile>();
+                    cfg.AddProfile<ImagemProfile>();
                 }
             );
         }

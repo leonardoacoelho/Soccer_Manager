@@ -32,6 +32,8 @@
                 @Html.DisplayFor(modelItem => item.Sigla)
             </td>
             <td>
+                <a href="@Url.Action("AddEscudo", new { id = item.Id })" class="btn btn-info">Escudo</a>
+
                 <a href="@Url.Action("Editar", new { id = item.Id })" class="btn btn-primary">Editar</a>
 
                 @if (!item.TemJogadores)

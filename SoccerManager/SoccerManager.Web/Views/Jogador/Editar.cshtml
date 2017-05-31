@@ -102,14 +102,6 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Foto_Id, htmlAttributes: new { @class = "control-label col-sm-3 col-md-2" })
-            <div class="col-sm-3 col-md-2">
-                @Html.EditorFor(model => model.Foto_Id, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Foto_Id, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
         <div class="form-group text text-right">
             <div class="col-xs-12 col-sm-6 col-md-4">
                 <input type="submit" value="Confirmar"class="btn btn-warning" />
